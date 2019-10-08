@@ -2,7 +2,7 @@
 
 # iarduino\_I2C\_IO
 
-**This is a library for Arduino IDE. It allows to control []() by iArduino.ru**
+**This is a library for Arduino IDE. It allows to control [GPIO Expander](https://iarduino.ru/shop/Expansion-payments/rasshiritel-na-8-vhodov-vyhodov-trema-modul.html) made by iArduino.ru**
 
 **Данная библиотека для Arduino IDE позвляет управлять [Расширительем выводов GPIO](https://iarduino.ru/shop/Expansion-payments/rasshiritel-na-8-vhodov-vyhodov-trema-modul.html).**
 
