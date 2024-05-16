@@ -16,6 +16,7 @@
 	GetInputRegister	KEYWORD2
 #	####################################################
 #	КОНСТАНТЫ:								   (LITERAL1)
+	pinNum	LITERAL1
 	EXP_REG_INPUT	LITERAL1
 	EXP_REG_OUTPUT	LITERAL1
 	EXP_REG_INVERT	LITERAL1

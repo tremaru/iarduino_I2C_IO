@@ -1,17 +1,15 @@
-//  Раскомментируйте для программной реализации шины I2C:   //
-//  #define pin_SW_SDA 3                                    // Назначение любого вывода Arduino для работы в качестве линии SDA программной шины I2C.
-//  #define pin_SW_SCL 9                                    // Назначение любого вывода Arduino для работы в качестве линии SCL программной шины I2C.
-//  Раскомментируйте для совместимости с большинством плат: //
-//  #include <Wire.h>                                       // Библиотека iarduino_I2C_IO будет использовать методы и функции библиотеки Wire.
-//  Ссылки для ознакомления:                                //
-//  Подробная информация о подключении модуля к шине I2C:   // http://wiki.iarduino.ru/page/i2c_connection/
-//  Подробная информация о функциях и методах библиотеки:   // http://wiki.iarduino.ru/page/rasshiritel-na-8-vhodov-vyhodov-trema-modul/
+// ПРИМЕР КОПИРУЕТ СОСТОЯНИЕ ВЫВОДОВ 4-7 НА ВЫВОДЫ 0-3:     //
                                                             //
+// Расширитель GPIO на 8 Входов/Выходов (Trema-модуль):     // https://iarduino.ru/shop/Expansion-payments/rasshiritel-na-8-vhodov-vyhodov-trema-modul.html
+// Информация о подключении модулей к шине I2C:             // https://wiki.iarduino.ru/page/i2c_connection/
+// Информация о модуле и описание библиотеки:               // https://wiki.iarduino.ru/page/rasshiritel-na-8-vhodov-vyhodov-trema-modul/
+                                                            //
+#include <Wire.h>                                           // Подключаем библиотеку для работы с аппаратной шиной I2C, до подключения библиотеки iarduino_I2C_IO.
 #include <iarduino_I2C_IO.h>                                // Подключаем библиотеку iarduino_I2C_IO для работы с модулем
 iarduino_I2C_IO extIO(0x20);                                // Создаём объект extIO для работы с модулем, адрес которого указан в качестве параметра.
                                                             //
 void setup(){                                               //
-  extIO.begin();                                            // Инициируем раборту с модулем расширения выводов
+  extIO.begin(&Wire); // &Wire1, &Wire2 ...                 // Инициируем работу с расширителем выводов, указав ссылку на объект для работы с шиной I2C на которой находится расширитель (по умолчанию &Wire).
   extIO.pinMode(0, OUTPUT);                                 // Переводим 0 вывод модуля  в режим выход
   extIO.pinMode(1, OUTPUT);                                 // Переводим 1 вывод модуля  в режим выход
   extIO.pinMode(2, OUTPUT);                                 // Переводим 2 вывод модуля  в режим выход
